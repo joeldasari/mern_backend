@@ -8,6 +8,7 @@ router.get("/", async (req, res) => {
     return res.json(await recipesModel.find({}));
   } catch (err) {
     res.json({ message: err.message });
+    console.log(err.message);
   }
 });
 
@@ -16,6 +17,7 @@ router.post("/", async (req, res) => {
     return res.json(await recipesModel.create(req.body));
   } catch (err) {
     res.json({ message: err.message });
+    console.log(err.message);
   }
 });
 
@@ -27,6 +29,7 @@ router.put("/", async (req, res) => {
     await user.save();
     res.json({ savedRecipes: user.savedRecipes });
   } catch (err) {
+    res.json({ message: err.message });
     console.log(err.message);
   }
 });
@@ -39,6 +42,7 @@ router.get("/savedRecipes/:id", async (req, res) => {
     });
     res.json({ savedRecipe });
   } catch (err) {
+    res.json({ message: err.message });
     console.log(err.message);
   }
 });
@@ -48,6 +52,7 @@ router.get("/savedList/:id", async (req, res) => {
     const user = await userModel.findById(req.params.id);
     res.json({ savedList: user.savedRecipes });
   } catch (err) {
+    res.json({ message: err.message });
     console.log("from savedList", err.message);
   }
 });
