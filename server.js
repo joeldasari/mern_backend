@@ -23,8 +23,7 @@ mongoose
   });
 
 const corsOptions = {
-  origin:
-    "https://656437ec25e19401b1f47dc3--illustrious-cobbler-ea783d.netlify.app/",
+  origin: "*",
   optionsSuccessStatus: 200,
 };
 
