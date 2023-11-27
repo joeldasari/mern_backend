@@ -22,7 +22,14 @@ mongoose
     console.log(err.message);
   });
 
-app.use(cors());
+const corsOptions = {
+  origin:
+    "https://656437ec25e19401b1f47dc3--illustrious-cobbler-ea783d.netlify.app/",
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
+
 app.use(express.json());
 app.use("/users", UserRouter);
 app.use("/recipes", recipesRouter);
