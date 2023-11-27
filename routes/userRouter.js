@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const router = express.Router();
-const secret = process.env.secret;
+const secret = process.env.SECRET;
 
 router.post("/register", async (req, res) => {
   const { email, password } = req.body;

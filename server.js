@@ -7,8 +7,8 @@ import { recipesRouter } from "./routes/recipesRouter.js";
 
 dotenv.config();
 
-const port = process.env.port || 5500;
-const uri = process.env.mongodb_uri;
+const port = process.env.PORT || 5500;
+const uri = process.env.MONGODB_URI;
 
 const app = express();
 
